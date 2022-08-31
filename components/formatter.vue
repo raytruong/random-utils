@@ -14,19 +14,21 @@ function splitInput(input: String): [String, String] {
   if (!input) {
     return ["", ""]
   }
+
   let splitInput = input.split(", got")
   let expected: String
-  let got: String
+  let actual: String
+
   if(splitInput.length > 1) {
     expected = splitInput[0].substring(28)
-    got = splitInput[1]
+    actual = splitInput[1]
   }
   else {
     return ["", ""]
   }
 
   let brokenExpected = addLineBreaks(expected)
-  let brokenGot = addLineBreaks(got)
+  let brokenGot = addLineBreaks(actual)
 
   return [brokenExpected, brokenGot]
 }
@@ -34,21 +36,17 @@ function splitInput(input: String): [String, String] {
 const prev = computed(() => {
   const out = splitInput(input.value)
   if (out.length > 0) {
-    return splitInput(input.value)[0]
+    return out[0]
   }
-  else {
-    return ""
-  }
+  return ""
 })
 
 const current = computed(() => {
   const out = splitInput(input.value)
   if (out.length > 1) {
-    return splitInput(input.value)[1]
+    return out[1]
   }
-  else {
-    return ""
-  }
+  return ""
 })
 
 </script>

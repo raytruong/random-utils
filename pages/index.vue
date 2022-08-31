@@ -1,5 +1,5 @@
 <template>
-  there is nothing here :)
+  please do not fire me
 </template>
 
 <script lang='ts' setup>
