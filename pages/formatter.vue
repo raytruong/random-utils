@@ -4,7 +4,7 @@ import Formatter from '~/components/formatter'
 
 <template>
   <div class="container mx-auto my-12">
-    <Formatter :input="input"/>
+    <Formatter/>
   </div>
 </template>
 
